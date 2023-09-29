@@ -2,7 +2,6 @@ package com.example.foodyapp.di
 
 import android.content.Context
 import androidx.room.Room
-import androidx.room.RoomDatabase
 import com.example.foodyapp.data.database.RecipesDao
 import com.example.foodyapp.data.database.RecipesDatabase
 import com.example.foodyapp.util.Constants
@@ -21,7 +20,7 @@ object DatabaseModule {
     @Provides
     fun provideDatabase(
         @ApplicationContext context: Context
-    ): RoomDatabase {
+    ): RecipesDatabase {
         return Room.databaseBuilder(context, RecipesDatabase::class.java, Constants.DATABASE_NAME)
             .build()
     }
